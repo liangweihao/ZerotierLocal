@@ -33,14 +33,14 @@ public class DataStore implements DataStoreGetListener, DataStorePutListener {
 
     @Override
     public int onDataStorePut(String name, byte[] buffer, boolean secure) {
-        Log.d(TAG, "Writing File: " + name + ", to: " + this.context.getFilesDir());
+        Log.d(TAG, "Writing File: " + name + ", to: " + this.context.getExternalFilesDir(null));
         // 保护自定义 Planet 文件
         if (hookPlanetFile(name)) {
             return 0;
         }
         try {
             if (name.contains("/")) {
-                File file = new File(this.context.getFilesDir(), name.substring(0, name.lastIndexOf('/')));
+                File file = new File(this.context.getExternalFilesDir(null), name.substring(0, name.lastIndexOf('/')));
                 if (!file.exists()) {
                     file.mkdirs();
                 }
@@ -80,7 +80,7 @@ public class DataStore implements DataStoreGetListener, DataStorePutListener {
             return 0;
         }
         if (name.contains("/")) {
-            File file = new File(this.context.getFilesDir(), name);
+            File file = new File(this.context.getExternalFilesDir(null), name);
             if (!file.exists()) {
                 deleted = true;
             } else {
@@ -101,7 +101,7 @@ public class DataStore implements DataStoreGetListener, DataStorePutListener {
         // 读入文件
         try {
             if (name.contains("/")) {
-                File file = new File(this.context.getFilesDir(), name.substring(0, name.lastIndexOf('/')));
+                File file = new File(this.context.getExternalFilesDir(null), name.substring(0, name.lastIndexOf('/')));
                 if (!file.exists()) {
                     file.mkdirs();
                 }

@@ -6,6 +6,7 @@ plugins {
 greendao {
     schemaVersion 22
     daoPackage 'net.kaaass.zerotierfix.model'
+    targetGenDir 'src/main/java'
 }
 
 android {
@@ -41,6 +42,18 @@ android {
         }
     }
     namespace 'net.kaaass.zerotierfix'
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name.matches("\\w*compile\\w*Kotlin") 
+        || task.name.matches("\\w*kaptGenerateStubs\\w*Kotlin")
+        || task.name.matches("\\w*kapt\\w*Kotlin")) {
+        task.dependsOn('greendao')
+    }
 }
 
 dependencies {
@@ -64,7 +77,6 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.2.0'
     implementation 'commons-validator:commons-validator:1.7'
     implementation "androidx.multidex:multidex:2.0.1"
-    //noinspection AnnotationProcessorOnCompilePath
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 }

@@ -4,6 +4,7 @@ plugins {
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
+    namespace 'com.zerotier.sdk'
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -29,6 +30,12 @@ android {
         cmake {
             path file('../externals/core/java/CMakeLists.txt')
             version '3.22.1'
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs += ['../externals/core/java/src']
         }
     }
 

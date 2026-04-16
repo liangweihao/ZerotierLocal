@@ -7,6 +7,12 @@
         android:id="@+id/menu_item_orbit"
         android:title="@string/menu_orbit" />
     <item
+        android:id="@+id/menu_item_network_interfaces"
+        android:title="@string/menu_network_interfaces" />
+    <item
+        android:id="@+id/menu_item_ping"
+        android:title="@string/menu_ping" />
+    <item
         android:id="@+id/menu_item_settings"
         android:title="@string/settings" />
 </menu>

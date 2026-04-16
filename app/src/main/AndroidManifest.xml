@@ -51,6 +51,12 @@
         <activity
             android:name=".ui.PeerListActivity"
             android:label="@string/peer_list" />
+        <activity
+            android:name=".ui.NetworkInterfaceActivity"
+            android:label="@string/menu_network_interfaces" />
+        <activity
+            android:name=".ui.PingActivity"
+            android:label="@string/menu_ping" />
 
         <receiver
             android:name=".service.StartupReceiver"

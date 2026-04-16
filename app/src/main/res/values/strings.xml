@@ -153,4 +153,14 @@
     <string name="dialog_no_notification_alert_title">Notification Permission Not Granted</string>
     <string name="open_notification_settings">Goto notification settings</string>
     <string name="dont_show_again">Don\'t show again</string>
+    <string name="menu_network_interfaces">Network Interfaces</string>
+    <string name="menu_ping">Ping</string>
+    <string name="network_interfaces">Network Interfaces</string>
+    <string name="ping_tool">Ping Tool</string>
+    <string name="enter_ip_address">Enter IP Address</string>
+    <string name="ping">Ping</string>
+    <string name="ping_result">Ping Result</string>
+    <string name="interface_name">Interface Name</string>
+    <string name="interface_address">IP Address</string>
+    <string name="interface_mac">MAC Address</string>
 </resources>

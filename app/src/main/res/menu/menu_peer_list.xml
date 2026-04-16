@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_network_interfaces"
+        android:title="@string/menu_network_interfaces" />
+    <item
+        android:id="@+id/menu_item_ping"
+        android:title="@string/menu_ping" />
+</menu>

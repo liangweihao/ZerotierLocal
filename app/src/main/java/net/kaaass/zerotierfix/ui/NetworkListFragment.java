@@ -310,24 +310,32 @@ public class NetworkListFragment extends Fragment {
         this.eventBus.post(new NodeStatusRequestEvent());
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        int menuId = menuItem.getItemId();
-        if (menuId == R.id.menu_item_settings) {
-            Log.d(TAG, "Selected Settings");
-            startActivity(new Intent(getActivity(), PrefsActivity.class));
-            return true;
-        } else if (menuId == R.id.menu_item_peers) {
-            Log.d(TAG, "Selected peers");
-            startActivity(new Intent(getActivity(), PeerListActivity.class));
-            return true;
-        } else if (menuId == R.id.menu_item_orbit) {
-            Log.d(TAG, "Selected orbit");
-            startActivity(new Intent(getActivity(), MoonOrbitActivity.class));
-            return true;
+        @Override
+        public boolean onOptionsItemSelected(MenuItem menuItem) {
+            int menuId = menuItem.getItemId();
+            if (menuId == R.id.menu_item_settings) {
+                Log.d(TAG, "Selected Settings");
+                startActivity(new Intent(getActivity(), PrefsActivity.class));
+                return true;
+            } else if (menuId == R.id.menu_item_peers) {
+                Log.d(TAG, "Selected peers");
+                startActivity(new Intent(getActivity(), PeerListActivity.class));
+                return true;
+            } else if (menuId == R.id.menu_item_orbit) {
+                Log.d(TAG, "Selected orbit");
+                startActivity(new Intent(getActivity(), MoonOrbitActivity.class));
+                return true;
+            } else if (menuId == R.id.menu_item_network_interfaces) {
+                Log.d(TAG, "Selected Network Interfaces");
+                startActivity(new Intent(getActivity(), NetworkInterfaceActivity.class));
+                return true;
+            } else if (menuId == R.id.menu_item_ping) {
+                Log.d(TAG, "Selected Ping");
+                startActivity(new Intent(getActivity(), PingActivity.class));
+                return true;
+            }
+            return super.onOptionsItemSelected(menuItem);
         }
-        return super.onOptionsItemSelected(menuItem);
-    }
 
     @Override
     public void onDestroy() {
